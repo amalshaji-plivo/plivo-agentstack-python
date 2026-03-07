@@ -40,7 +40,8 @@ class AgentResource:
         Optional query params: page, per_page, sort_by, sort_order,
         agent_mode, participant_mode.
 
-        Returns ``{"data": [...], "meta": {"page", "per_page", "total", "total_pages"}}``.
+        Returns ``{"api_id": "...", "objects": [...],
+        "meta": {"limit", "offset", "total_count", "previous", "next"}}``.
         """
         return await self._http.request("GET", f"{self._prefix}/Agent", params=params)
 
